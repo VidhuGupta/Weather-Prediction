@@ -1,1 +1,96 @@
-<p>Hello World</p>
+<!DOCTYPDOCTYPEEDOCTYPE html>
+<html>
+<head>
+  <title>weather prediction</title>
+  <style>
+    body {
+      background-image: url("https://cdn.glitch.global/e7bdfc2a-46d5-45e3-b37f-b826f420562d/cyclones-storm.gif?v=1690021257456");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px;
+    }
+
+    .main {
+      background-color: rgba(248, 249, 250, 0.1); /* 50% transparent white */
+      padding: 20px;
+    }
+
+    /* Set the labels' text color to white */
+    form label {
+      color: #fff;
+    }
+    
+    h1 {
+    }
+  </style>
+  <!-- Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div align="center" class="main">
+    <h1 style="background-color: #fffdd0">WEATHER PREDICTION</h1>
+    <br />
+    <form action="/weather" method="POST">
+      <table align="center">
+        <div class="row">
+          <tr align="center">
+            <div class="col-sm-6">
+              <td>
+                <label for="Maximum_Temp" class="form-label">Maximum_Temp</label>
+              </td>
+            </div>
+            <div class="col-sm-6">
+              <td>
+                <!-- Use Bootstrap form-control class for input fields -->
+                <input type="text" name="Maximum_Temp" id="Maximum_Temp" placeholder="MAXIMUM TEMPERATURE" required class="form-control" />
+              </td>
+            </div>
+          </tr>
+          <tr align="center">
+            <div class="col-sm-6">
+              <td>
+                <label for="Minimum_Temp" class="form-label">Minimum_Temp</label>
+              </td>
+            </div>
+            <div class="col-sm-6">
+              <td>
+                <!-- Use Bootstrap form-control class for input fields -->
+                <input type="text" name="Minimum_Temp" id="Minimum_Temp" placeholder="MINIMUM TEMPERATURE" required class="form-control" />
+              </td>
+            </div>
+          </tr>
+          <tr align="center">
+            <div class="col-sm-6">
+              <td>
+                <label for="Wind_Speed" class="form-label">Wind_Speed</label>
+              </td>
+            </div>
+            <div class="col-sm-6">
+              <td>
+                <!-- Use Bootstrap form-control class for input fields -->
+                <input type="text" name="Wind_Speed" id="Wind_Speed" placeholder="WIND SPEED" required class="form-control" />
+              </td>
+            </div>
+          </tr>
+
+          <tr>
+            <td colspan="2" align="center">
+              <!-- Use Bootstrap btn class for buttons -->
+              <input type="submit" value="Predict weather" class="btn btn-primary" />
+              <input type="reset" value="Clear" class="btn btn-secondary" />
+            </td>
+          </tr>
+        </div>
+      </table>
+    </form>
+
+    <div class="row">
+      <h2 style="color: green;">
+        <em>
+          {{result}}
+        </em>
+      </h2>
+    </div>
+  </div>
+</body>
+</html>
