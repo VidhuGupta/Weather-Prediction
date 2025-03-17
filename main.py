@@ -4,7 +4,8 @@ from sklearn.ensemble import RandomForestClassifier
 import requests
 import io
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")  # Ensure Flask looks in /templates
+
 
 # Load dataset from GitHub URL
 CSV_URL = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO/main/weatherpredict.csv"
