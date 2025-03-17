@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder="templates")  # Ensure Flask looks in /tem
 
 
 # Load dataset from GitHub URL
-CSV_URL = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO/main/weatherpredict.csv"
+CSV_URL = "https://raw.githubusercontent.com/VidhuGupta/Weather-Prediction/main/weatherpredict.csv"
 
 def load_data():
     response = requests.get(CSV_URL)
